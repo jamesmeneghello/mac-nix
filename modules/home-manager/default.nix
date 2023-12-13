@@ -38,6 +38,5 @@
   programs.git.enable = true;
   programs.git.userName = config.gitName;
   programs.git.userEmail = config.gitEmail;
-  programs.gh.enable = true;
   home.file.".inputrc".source = ./dotfiles/inputrc;
 }

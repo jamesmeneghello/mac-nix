@@ -16,11 +16,14 @@ rec {
 
   # Homebrew
   taps = [];
-  brews = [];
+  brews = [
+    "gh"
+  ];
   casks = [ 
     "google-chrome" 
     "rectangle"
     "visual-studio-code"
+    "raycast"
   ];
   nix_packages = with pkgs; [
     ripgrep

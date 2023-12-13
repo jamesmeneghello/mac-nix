@@ -19,7 +19,6 @@
   programs.fzf.enable = true;
   programs.fzf.enableZshIntegration = true;
   programs.eza.enable = true;
-  programs.git.enable = true;
   programs.zsh.enable = true;
   programs.zsh.enableCompletion = true;
   programs.zsh.enableAutosuggestions = true;
@@ -36,5 +35,8 @@
     settings.font.normal.family = "MesloLGS Nerd Font Mono";
     settings.font.size = 16;
   };
+  programs.git.enable = true;
+  programs.git.userName = config.gitName;
+  programs.git.userEmail = config.gitEmail;
   home.file.".inputrc".source = ./dotfiles/inputrc;
 }

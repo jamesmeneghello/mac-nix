@@ -3,6 +3,9 @@ rec {
   # Your username here.
   username = "james";
 
+  gitName = "James Meneghello";
+  gitEmail = "james.meneghello@gmail.com";
+
   # Path to your home directory here.
   homeDirectory = "/Users/james";
 
@@ -17,10 +20,10 @@ rec {
   casks = [ 
     "google-chrome" 
     "rectangle"
+    "visual-studio-code"
   ];
   nix_packages = with pkgs; [
     ripgrep
-    git   
     fd    
     curl 
     less

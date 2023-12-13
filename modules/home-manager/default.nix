@@ -7,12 +7,11 @@
     fd
     curl
     less
-    pwnvim.packages."aarch64-darwin".default
   ];
   home.sessionVariables = {
     PAGER = "less";
     CLICLOLOR = 1;
-    EDITOR = "nvim";
+    EDITOR = "nano";
   };
   programs.bat.enable = true;
   programs.bat.config.theme = "TwoDark";

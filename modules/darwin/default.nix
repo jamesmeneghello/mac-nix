@@ -1,6 +1,6 @@
 { pkgs, ... }: 
 let
-  config = import ../../config.nix;
+  config = (import ../../config.nix { inherit pkgs; } );
 in
 {
   # here go the darwin preferences and config items
@@ -33,9 +33,9 @@ in
     enable = true;
     caskArgs.no_quarantine = true;
     global.brewfile = true;
-    masApps = { };
-    casks = [ "rectangle" ];
-    taps = [ ];
-    brews = [ ];
+    masApps = config.mas;
+    casks = config.casks;
+    taps = config.taps;
+    brews = config.brews;
   };
 }

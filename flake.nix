@@ -18,13 +18,13 @@
   };
   outputs = inputs@{ nixpkgs, home-manager, darwin, nix-homebrew, ... }: 
   let
-    config = import ./config.nix;
+    config = (import ./config.nix {});
   in
   {
     system = "aarch64-darwin";
     darwinConfigurations.mbp-dev = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
-      pkgs = import nixpkgs { system = "aarch64-darwin"; };
+      pkgs = import nixpkgs { system = "aarch64-darwin"; config.allowUnfree = true; };
       modules = [
         ./modules/darwin
 	nix-homebrew.darwinModules.nix-homebrew

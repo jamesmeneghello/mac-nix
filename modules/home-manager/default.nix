@@ -1,14 +1,14 @@
-{ pkgs, ... }: {
+{ pkgs, nixpkgs, ... }: 
+  let
+    config = (import ../../config.nix { inherit pkgs; });
+  in
+{
   # Don't change this when you change package input. Leave it alone.
   home.stateVersion = "22.11";
 
   # specify my home-manager configs
-  home.packages = with pkgs; [
-    ripgrep
-    fd
-    curl
-    less
-  ];
+  home.packages = config.nix_packages;
+
   home.sessionVariables = {
     PAGER = "less";
     CLICLOLOR = 1;

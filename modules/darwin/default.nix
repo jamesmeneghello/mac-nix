@@ -1,5 +1,9 @@
 { pkgs, ... }: {
   # here go the darwin preferences and config items
+  users.users.james = {
+    name = "james";
+    home = "/Users/james";
+  };	  
   programs.zsh.enable = true;
   environment = {
     shells = with pkgs; [ bash zsh ];
@@ -26,8 +30,8 @@
     caskArgs.no_quarantine = true;
     global.brewfile = true;
     masApps = { };
-    casks = [ "raycast" "amethyst" ];
-    taps = [ "fujiapple852/trippy" ];
-    brews = [ "trippy" ];
+    casks = [ "rectangle" ];
+    taps = [ ];
+    brews = [ ];
   };
 }

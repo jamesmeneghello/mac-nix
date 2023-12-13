@@ -12,13 +12,26 @@
     # Controls system level software and settings including fonts
     darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    # Install homebrew as well
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
-  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, darwin, nix-homebrew, ... }: {
+    system = "aarch64-darwin";
     darwinConfigurations.Jamess-MacBook-Pro = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       pkgs = import nixpkgs { system = "aarch64-darwin"; };
       modules = [
         ./modules/darwin
+	nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            enable = true;
+            # not yet
+	    # enableRosetta = true;
+            user = "james";
+	  };
+        }
         home-manager.darwinModules.home-manager
         {
           home-manager = {

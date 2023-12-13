@@ -16,9 +16,13 @@
     # Install homebrew as well
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
-  outputs = inputs@{ nixpkgs, home-manager, darwin, nix-homebrew, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, darwin, nix-homebrew, ... }: 
+  let
+    config = import ./config.nix;
+  in
+  {
     system = "aarch64-darwin";
-    darwinConfigurations.Jamess-MacBook-Pro = darwin.lib.darwinSystem {
+    darwinConfigurations.mbp-dev = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       pkgs = import nixpkgs { system = "aarch64-darwin"; };
       modules = [
@@ -29,7 +33,7 @@
             enable = true;
             # not yet
 	    # enableRosetta = true;
-            user = "james";
+            user = "${config.username}";
 	  };
         }
         home-manager.darwinModules.home-manager
@@ -37,8 +41,8 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.james.imports = [ ./modules/home-manager ];
-          };
+            users.${config.username}.imports = [ ./modules/home-manager ];
+	  };
         }
       ];
     };

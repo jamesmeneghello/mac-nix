@@ -1,8 +1,12 @@
-{ pkgs, ... }: {
+{ pkgs, ... }: 
+let
+  config = import ../../config.nix;
+in
+{
   # here go the darwin preferences and config items
-  users.users.james = {
-    name = "james";
-    home = "/Users/james";
+  users.users.${config.username} = {
+    name = "${config.username}";
+    home = "${config.homeDirectory}";
   };	  
   programs.zsh.enable = true;
   environment = {

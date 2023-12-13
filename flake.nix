@@ -1,5 +1,5 @@
 {
-  description = "my minimal flake";
+  description = "dev macbook pro";
   inputs = {
     # Where we get most of our software. Giant mono repo with recipes
     # called derivations that say how to build software.
@@ -17,7 +17,7 @@
     pwnvim.url = "github:zmre/pwnvim";
   };
   outputs = inputs@{ nixpkgs, home-manager, darwin, pwnvim, ... }: {
-    darwinConfigurations.Demos-Virtual-Machine = darwin.lib.darwinSystem {
+    darwinConfigurations.Jamess-MacBook-Pro = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       pkgs = import nixpkgs { system = "aarch64-darwin"; };
       modules = [
@@ -28,7 +28,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = { inherit pwnvim; };
-            users.demo.imports = [ ./modules/home-manager ];
+            users.james.imports = [ ./modules/home-manager ];
           };
         }
       ];

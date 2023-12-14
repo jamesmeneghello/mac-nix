@@ -30,13 +30,9 @@
   };
   programs.starship.enable = true;
   programs.starship.enableZshIntegration = true;
-  programs.alacritty = {
-    enable = true;
-    settings.font.normal.family = "MesloLGS Nerd Font Mono";
-    settings.font.size = 16;
-  };
   programs.git.enable = true;
   programs.git.userName = config.gitName;
   programs.git.userEmail = config.gitEmail;
   home.file.".inputrc".source = ./dotfiles/inputrc;
+  home.file.".gitconfig".source = ./dotfiles/gitconfig;
 }

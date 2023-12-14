@@ -27,14 +27,13 @@
       pkgs = import nixpkgs { system = "aarch64-darwin"; config.allowUnfree = true; };
       modules = [
         ./modules/darwin
-	nix-homebrew.darwinModules.nix-homebrew
+        nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
             enable = true;
-            # not yet
-	    # enableRosetta = true;
+            # enableRosetta = true;
             user = "${config.username}";
-	  };
+          };
         }
         home-manager.darwinModules.home-manager
         {
@@ -42,7 +41,7 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             users.${config.username}.imports = [ ./modules/home-manager ];
-	  };
+          };
         }
       ];
     };

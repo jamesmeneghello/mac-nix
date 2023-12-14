@@ -157,7 +157,3 @@
 [url "git://gist.github.com/"]
 
   insteadOf = "gist:"
-
-[user]
-	name = Dirk Kelly
-	email = github@dirkkelly.com

@@ -1,13 +1,13 @@
 { pkgs ? import <nixpkgs> {} }:
 rec {
   # Your username here.
-  username = "james";
+  username = "dirkkelly";
 
-  gitName = "James Meneghello";
-  gitEmail = "james.meneghello@gmail.com";
+  gitName = "Dirk Kelly";
+  gitEmail = "dk@dirkkelly.com";
 
   # Path to your home directory here.
-  homeDirectory = "/Users/james";
+  homeDirectory = "/Users/dirkkelly";
 
   # Mac App Store Apps
   mas = {
@@ -20,7 +20,9 @@ rec {
     "gh"
   ];
   casks = [ 
+    "1password"
     "google-chrome" 
+    "iterm2"
     "rectangle"
     "visual-studio-code"
     "raycast"

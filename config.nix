@@ -18,6 +18,8 @@ rec {
   taps = [];
   brews = [
     "gh"
+    "rbenv"
+    "ruby-build"
   ];
   casks = [ 
     "1password"
@@ -32,6 +34,5 @@ rec {
     fd    
     curl 
     less
-    rbenv
   ];	
 }

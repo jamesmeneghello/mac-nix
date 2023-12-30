@@ -30,5 +30,6 @@ rec {
     fd    
     curl 
     less
+    rbenv
   ];	
 }

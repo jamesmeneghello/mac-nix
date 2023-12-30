@@ -23,7 +23,7 @@
   programs.zsh.enableCompletion = true;
   programs.zsh.enableAutosuggestions = true;
   programs.zsh.syntaxHighlighting.enable = true;
-  programs.zsh.initExtra = "export GEM_HOME=\"\$HOME/.gem\";\neval \"\$(rbenv init - zsh)\";\n";
+  programs.zsh.initExtra = "export GEM_HOME=\"\$HOME/.gem\";\neval \"\$(rbenv init - zsh)\";\nexport PATH=\"/opt/homebrew/opt/libpq/bin:\$PATH\"\n";
   programs.zsh.shellAliases = {
     ls = "ls --color=auto -F";
     nixswitch = "darwin-rebuild switch --flake ~/src/system-config/.#";

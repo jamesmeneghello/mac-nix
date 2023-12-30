@@ -20,6 +20,7 @@ rec {
     "gh"
     "rbenv"
     "ruby-build"
+    "libpq"
   ];
   casks = [ 
     "1password"
@@ -34,6 +35,5 @@ rec {
     fd    
     curl 
     less
-    postgresql_16
   ];	
 }

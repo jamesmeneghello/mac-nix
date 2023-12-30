@@ -34,5 +34,6 @@ rec {
     fd    
     curl 
     less
+    postgresql_16
   ];	
 }

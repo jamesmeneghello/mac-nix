@@ -27,7 +27,6 @@
     export GEM_HOME="$HOME/.gem"
     export HOMEBREW_PREFIX="/opt/homebrew"
 
-    eval "$(rbenv init - zsh)"
     eval "$(direnv hook zsh)"
 
     export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
@@ -39,7 +38,6 @@
 
     export NODE_VERSIONS_PREFIX=v
     export NODE_VERSIONS=$NVM_DIR/versions/node/
-
   '';
   programs.zsh.shellAliases = {
     ls = "ls --color=auto -F";

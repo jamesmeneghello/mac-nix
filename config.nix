@@ -22,7 +22,7 @@ rec {
     "mkcert"
     "mysql-client"
     "nss"
-    "nvm"
+    "nvm" # Node 16 is deprecated, once moved beyond could use nix
     "openssl"
     "yarn"
     "zstd"
@@ -37,25 +37,27 @@ rec {
   ];
 
   nix_packages = with pkgs; [
+    bundix
     curl
     direnv
     docker # Still have to install Docker Desktop
     docker-compose
     fd
-    less
-    python2
-    ruby.devEnv
+    foreman
     git
-    sqlite
+    gnumake
+    less
     libpcap
-    postgresql
     libxml2
     libxslt
+    nodenv
     pkg-config
-    bundix
-    foreman
-    gnumake
+    postgresql
+    python2
     ripgrep
+    ruby.devEnv
+    sqlite
+    yarn2nix
     zstd
   ];
 }

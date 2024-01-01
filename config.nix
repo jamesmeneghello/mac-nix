@@ -1,13 +1,13 @@
 { pkgs ? import <nixpkgs> {} }:
 rec {
   # Your username here.
-  username = "james";
+  username = "dirkkelly";
 
-  gitName = "James Meneghello";
-  gitEmail = "james.meneghello@gmail.com";
+  gitName = "Dirk Kelly";
+  gitEmail = "dk@dirkkelly.com";
 
   # Path to your home directory here.
-  homeDirectory = "/Users/james";
+  homeDirectory = "/Users/dirkkelly";
 
   # Mac App Store Apps
   mas = {
@@ -18,9 +18,12 @@ rec {
   taps = [];
   brews = [
     "gh"
+    "libpq"
+    "mysql-client"
+    "openssl"
     "rbenv"
     "ruby-build"
-    "libpq"
+    "zstd"
   ];
   casks = [ 
     "1password"
@@ -31,9 +34,12 @@ rec {
     "raycast"
   ];
   nix_packages = with pkgs; [
-    ripgrep
-    fd    
-    curl 
+    curl
+    direnv
+    docker
+    fd
     less
+    ripgrep
+    zstd
   ];	
 }

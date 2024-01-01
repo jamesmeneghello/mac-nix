@@ -41,6 +41,7 @@
   programs.git.enable = true;
   programs.git.userName = config.gitName;
   programs.git.userEmail = config.gitEmail;
+  home.file.".aliases".source = ./dotfiles/aliases;
   home.file.".inputrc".source = ./dotfiles/inputrc;
   home.file.".gitconfig".source = ./dotfiles/gitconfig;
 }

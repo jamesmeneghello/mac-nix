@@ -19,10 +19,15 @@ rec {
   brews = [
     "gh"
     "libpq"
+    "mkcert"
     "mysql-client"
+    "nss"
+    "nvm"
     "openssl"
+    "pyenv"
     "rbenv"
     "ruby-build"
+    "yarn"
     "zstd"
   ];
   casks = [ 
@@ -36,7 +41,8 @@ rec {
   nix_packages = with pkgs; [
     curl
     direnv
-    docker
+    docker # Still have to install Docker Desktop
+    docker-compose
     fd
     less
     ripgrep

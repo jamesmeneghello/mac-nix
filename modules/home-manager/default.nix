@@ -25,11 +25,24 @@
   programs.zsh.syntaxHighlighting.enable = true;
   programs.zsh.initExtra = ''
     export GEM_HOME="$HOME/.gem"
-    eval "$(rbenv init - zsh)"
-    export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+    export HOMEBREW_PREFIX="/opt/homebrew"
 
-    bindkey '\e[H'    beginning-of-line
-    bindkey '\e[F'    end-of-line
+    eval "$(rbenv init - zsh)"
+    eval "$(direnv hook zsh)"
+
+    export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+    export PATH="/opt/homebrew/bin:$PATH"
+
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
+    [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+    export NODE_VERSIONS_PREFIX=v
+    export NODE_VERSIONS=$NVM_DIR/versions/node/
+
+    export PYENV_ROOT="$HOME/.pyenv"
+    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
   '';
   programs.zsh.shellAliases = {
     ls = "ls --color=auto -F";

@@ -41,15 +41,15 @@
   '';
   programs.zsh.shellAliases = {
     ls = "ls --color=auto -F";
-    nixswitch = "darwin-rebuild switch --flake ~/src/system-config/.#";
+    nixswitch = "nix --extra-experimental-features nix-command --extra-experimental-features flakes run nix-darwin -- switch --flake ~/src/mac-nix#mbp-dev";
     nixup = "pushd ~/src/system-config; nix flake update; nixswitch; popd";
+    gap = "git add -p";
   };
   programs.starship.enable = true;
   programs.starship.enableZshIntegration = true;
   programs.git.enable = true;
   programs.git.userName = config.gitName;
   programs.git.userEmail = config.gitEmail;
-  home.file.".aliases".source = ./dotfiles/aliases;
   home.file.".inputrc".source = ./dotfiles/inputrc;
   home.file.".gitconfig".source = ./dotfiles/gitconfig;
 

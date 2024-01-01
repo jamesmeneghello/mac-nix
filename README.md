@@ -16,12 +16,3 @@ To apply:
 ```bash
 > nix run nix-darwin -- switch --flake .#mbp-dev
 ```
-
-## Python
-
-Currently using pyenv, to get support for 2
-
-```bash
-pyenv install 2.7.18
-pyenv global 2.7.18
-```

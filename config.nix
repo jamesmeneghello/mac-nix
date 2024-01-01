@@ -18,15 +18,13 @@ rec {
   taps = [];
   brews = [
     "gh"
-    "libpq"
     "mkcert"
-    "mysql-client"
     "nss"
     "nvm" # Node 16 is deprecated, once moved beyond could use nix
     "openssl"
-    "yarn"
     "zstd"
   ];
+
   casks = [ 
     "1password"
     "google-chrome" 
@@ -34,6 +32,7 @@ rec {
     "rectangle"
     "visual-studio-code"
     "raycast"
+    "slack"
   ];
 
   nix_packages = with pkgs; [
@@ -50,9 +49,10 @@ rec {
     libpcap
     libxml2
     libxslt
+    mysql-client
     nodenv
     pkg-config
-    postgresql
+    postgresql_14
     python2
     ripgrep
     ruby.devEnv

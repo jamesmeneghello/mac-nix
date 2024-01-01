@@ -40,9 +40,6 @@
     export NODE_VERSIONS_PREFIX=v
     export NODE_VERSIONS=$NVM_DIR/versions/node/
 
-    export PYENV_ROOT="$HOME/.pyenv"
-    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
   '';
   programs.zsh.shellAliases = {
     ls = "ls --color=auto -F";
@@ -57,4 +54,6 @@
   home.file.".aliases".source = ./dotfiles/aliases;
   home.file.".inputrc".source = ./dotfiles/inputrc;
   home.file.".gitconfig".source = ./dotfiles/gitconfig;
+
+  nixpkgs.config.permittedInsecurePackages = config.permittedInsecurePackages;
 }

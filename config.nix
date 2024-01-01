@@ -24,9 +24,6 @@ rec {
     "nss"
     "nvm"
     "openssl"
-    "pyenv"
-    "rbenv"
-    "ruby-build"
     "yarn"
     "zstd"
   ];
@@ -38,6 +35,7 @@ rec {
     "visual-studio-code"
     "raycast"
   ];
+
   nix_packages = with pkgs; [
     curl
     direnv
@@ -45,7 +43,19 @@ rec {
     docker-compose
     fd
     less
+    python2
+    ruby.devEnv
+    git
+    sqlite
+    libpcap
+    postgresql
+    libxml2
+    libxslt
+    pkg-config
+    bundix
+    foreman
+    gnumake
     ripgrep
     zstd
-  ];	
+  ];
 }

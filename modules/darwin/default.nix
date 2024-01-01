@@ -27,6 +27,7 @@ in
     finder._FXShowPosixPathInTitle = true;
     NSGlobalDomain.AppleShowAllExtensions = true;
   };
+
   # backwards compat; don't change
   system.stateVersion = 4;
   homebrew = {

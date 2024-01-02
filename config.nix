@@ -45,12 +45,12 @@ rec {
     foreman
     git
     gnumake
+    heroku
     less
     libpcap
     libxml2
     libxslt
     mysql-client
-    nodenv
     pkg-config
     python2
     ripgrep

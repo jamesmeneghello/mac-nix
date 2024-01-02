@@ -35,5 +35,6 @@ rec {
     fd    
     curl 
     less
+    slack
   ];	
 }

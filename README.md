@@ -4,6 +4,7 @@
 
 - Install Nix
 - Install XCode-Tools
+- Install Docker Desktop (womp)
 
 ## Usage
 

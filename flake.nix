@@ -24,7 +24,11 @@
     system = "aarch64-darwin";
     darwinConfigurations.mbp-dev = darwin.lib.darwinSystem {
       system = "aarch64-darwin";
-      pkgs = import nixpkgs { system = "aarch64-darwin"; config.allowUnfree = true; };
+      pkgs = import nixpkgs {
+        system = "aarch64-darwin";
+        config.allowUnfree = true;
+        config.permittedInsecurePackages = [ "python-2.7.18.7" ]; # TODO: "${config.permittedInsecurePackages}"
+      };
       modules = [
         ./modules/darwin
         nix-homebrew.darwinModules.nix-homebrew

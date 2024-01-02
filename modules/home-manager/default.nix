@@ -25,16 +25,25 @@
   programs.zsh.syntaxHighlighting.enable = true;
   programs.zsh.initExtra = ''
     export GEM_HOME="$HOME/.gem"
-    eval "$(rbenv init - zsh)"
-    export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+    export HOMEBREW_PREFIX="/opt/homebrew"
 
-    bindkey '\e[H'    beginning-of-line
-    bindkey '\e[F'    end-of-line
+    eval "$(direnv hook zsh)"
+
+    export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+    export PATH="/opt/homebrew/bin:$PATH"
+
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
+    [ -s "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$HOMEBREW_PREFIX/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+
+    export NODE_VERSIONS_PREFIX=v
+    export NODE_VERSIONS=$NVM_DIR/versions/node/
   '';
   programs.zsh.shellAliases = {
     ls = "ls --color=auto -F";
-    nixswitch = "darwin-rebuild switch --flake ~/src/system-config/.#";
+    nixswitch = "nix --extra-experimental-features nix-command --extra-experimental-features flakes run nix-darwin -- switch --flake ~/src/mac-nix#mbp-dev";
     nixup = "pushd ~/src/system-config; nix flake update; nixswitch; popd";
+    gap = "git add -p";
   };
   programs.starship.enable = true;
   programs.starship.enableZshIntegration = true;
@@ -43,4 +52,6 @@
   programs.git.userEmail = config.gitEmail;
   home.file.".inputrc".source = ./dotfiles/inputrc;
   home.file.".gitconfig".source = ./dotfiles/gitconfig;
+
+  nixpkgs.config.permittedInsecurePackages = config.permittedInsecurePackages;
 }

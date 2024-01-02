@@ -18,23 +18,47 @@ rec {
   taps = [];
   brews = [
     "gh"
-    "rbenv"
-    "ruby-build"
     "libpq"
+    "mkcert"
+    "nss"
+    "nvm" # Node 16 is deprecated, once moved beyond could use nix
+    "openssl"
+    "zstd"
   ];
+
   casks = [ 
     "1password"
     "google-chrome" 
     "iterm2"
     "rectangle"
-    "visual-studio-code"
     "raycast"
   ];
+
   nix_packages = with pkgs; [
-    ripgrep
-    fd    
-    curl 
+    bundix
+    curl
+    direnv
+    docker # Still have to install Docker Desktop
+    docker-compose
+    fd
+    foreman
+    git
+    gnumake
     less
+    libpcap
+    libxml2
+    libxslt
+    mysql-client
+    nodenv
+    pkg-config
+    # postgresql_14 libpq not being found
+    python2
+    ripgrep
+    ruby.devEnv
+    vscode
     slack
-  ];	
+    sqlite
+    yarn2nix
+    zstd
+  ];
 }

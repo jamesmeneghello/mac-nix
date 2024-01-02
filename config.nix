@@ -23,6 +23,7 @@ rec {
     "nss"
     "nvm" # Node 16 is deprecated, once moved beyond could use nix
     "openssl"
+    "yarn"
     "zstd"
   ];
 
@@ -44,12 +45,12 @@ rec {
     foreman
     git
     gnumake
+    heroku
     less
     libpcap
     libxml2
     libxslt
     mysql-client
-    nodenv
     pkg-config
     python2
     ripgrep
@@ -57,7 +58,6 @@ rec {
     vscode
     slack
     sqlite
-    yarn2nix
     zstd
   ];
 }

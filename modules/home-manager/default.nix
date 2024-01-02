@@ -67,5 +67,4 @@
   home.file.".inputrc".source = ./dotfiles/inputrc;
   home.file.".gitconfig".source = ./dotfiles/gitconfig;
   home.file.".my.cnf".source = ./dotfiles/my.cnf;
-  home.file."pgpass".source = ./dotfiles/pgpass;
 }

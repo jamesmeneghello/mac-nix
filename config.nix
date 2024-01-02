@@ -21,9 +21,8 @@ rec {
     "libpq"
     "mkcert"
     "nss"
+    "mysql-client"
     "nvm" # Node 16 is deprecated, once moved beyond could use nix
-    "openssl"
-    "zstd"
   ];
 
   casks = [ 
@@ -48,10 +47,8 @@ rec {
     libpcap
     libxml2
     libxslt
-    mysql-client
     nodenv
     pkg-config
-    # postgresql_14 libpq not being found
     python2
     ripgrep
     ruby.devEnv
@@ -59,6 +56,5 @@ rec {
     slack
     sqlite
     yarn2nix
-    zstd
   ];
 }

@@ -24,6 +24,7 @@ rec {
     "nvm" # Node 16 is deprecated, once moved beyond could use nix
     "openssl"
     "zstd"
+    "mysql-client"
   ];
 
   casks = [ 
@@ -48,7 +49,6 @@ rec {
     libpcap
     libxml2
     libxslt
-    mysql-client
     nodenv
     pkg-config
     # postgresql_14 libpq not being found

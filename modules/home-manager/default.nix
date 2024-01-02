@@ -31,6 +31,8 @@
 
     export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
     export PATH="/opt/homebrew/bin:$PATH"
+    export PATH="/usr/local/opt/libpq/bin:$PATH"
+    export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
     export NVM_DIR="$HOME/.nvm"
     [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
@@ -38,6 +40,9 @@
 
     export NODE_VERSIONS_PREFIX=v
     export NODE_VERSIONS=$NVM_DIR/versions/node/
+
+    export PGHOST="localhost"
+    export PGUSER="postgres"
   '';
   programs.zsh.shellAliases = {
     ls = "ls --color=auto -F";
@@ -50,8 +55,15 @@
   programs.git.enable = true;
   programs.git.userName = config.gitName;
   programs.git.userEmail = config.gitEmail;
+
+  programs.ssh = {
+    enable = true;
+    extraConfig = ''
+      Host *
+        IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+    '';
+  };
+
   home.file.".inputrc".source = ./dotfiles/inputrc;
   home.file.".gitconfig".source = ./dotfiles/gitconfig;
-
-  nixpkgs.config.permittedInsecurePackages = config.permittedInsecurePackages;
 }

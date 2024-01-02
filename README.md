@@ -4,6 +4,8 @@
 
 - Install Nix
 - Install XCode-Tools
+- Install Docker Desktop (womp)
+- `/usr/sbin/softwareupdate --install-rosetta --agree-to-license`
 
 ## Usage
 

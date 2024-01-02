@@ -1,3 +1,18 @@
+[user]
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/MliDqw+wWAGOK595+UR1u2qMRWINTTMT7V3NYjSYn # dirkkelly
+
+[gpg]
+
+  format = ssh
+
+[gpg "ssh"]
+
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+
+  gpgsign = true
+
 [alias]
   co = checkout
   ci = commit
@@ -154,20 +169,3 @@
 
 [url "git://gist.github.com/"]
   insteadOf = "gist:"
-
-[user]
-
-  # dirkkelly signing
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/MliDqw+wWAGOK595+UR1u2qMRWINTTMT7V3NYjSYn
-
-[gpg]
-
-  format = ssh
-
-[gpg "ssh"]
-
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-
-[commit]
-
-  gpgsign = true

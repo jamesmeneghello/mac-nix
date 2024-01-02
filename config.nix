@@ -30,9 +30,7 @@ rec {
     "google-chrome" 
     "iterm2"
     "rectangle"
-    "visual-studio-code"
     "raycast"
-    "slack"
   ];
 
   nix_packages = with pkgs; [
@@ -56,6 +54,8 @@ rec {
     python2
     ripgrep
     ruby.devEnv
+    vscode
+    slack
     sqlite
     yarn2nix
     zstd

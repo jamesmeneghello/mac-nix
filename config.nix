@@ -23,6 +23,7 @@ rec {
     "nss"
     "nvm" # Node 16 is deprecated, once moved beyond could use nix
     "openssl"
+    "yarn"
     "zstd"
   ];
 
@@ -57,7 +58,6 @@ rec {
     vscode
     slack
     sqlite
-    yarn2nix
     zstd
   ];
 }
